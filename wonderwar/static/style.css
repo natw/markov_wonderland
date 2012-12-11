@@ -1,0 +1,7 @@
+body { font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+
+#container { width: 700px; }
+super { vertical-align: super; font-size: 70%; }
+input#submit { margin-right: 20px; }
+input#min_words { width: 50px; margin-left: 5px; }
+textarea { width: 600px; height: 160px; margin-top: 10px; }

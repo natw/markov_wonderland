@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+    <title>django markov app</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}" media="screen" />
+
+    <script type="text/javascript" src="{% static "jquery-1.2.6.min.js" %}"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        $('#submit').click(function() {
+          $('textarea').load('/new_text/'+$('input#min_words').val()+'/');
+          return false;
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="container">
+      <h2>Wonderland at War</h2>
+      <p>A Combination of Sun Tzu's <em>Art of War</em> and Lewis Carroll's <em>Alice in Wonderland</em> using 2<super>nd</super> order word-level markov chains.</p>
+      <input type="submit" id="submit" value="Generate New Text" />
+      <label for="min_words">minimum # of words:</label><input id="min_words" name="min_words" type="text" value=30 />
+      <textarea>{{ text }}</textarea>
+    </body>
+  </html>
